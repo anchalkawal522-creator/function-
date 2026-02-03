@@ -16,10 +16,14 @@
 
 // 
 // 
-let test= 99999987;
-function glow(){
-    let test=3456;
-    console.log(test)
-}
-glow();
-console.log(test);
+// let test= 99999987;
+// function glow(){
+//     let test=3456;
+//     console.log(test)
+// }
+// glow();
+// console.log(test);
+
+
+// 
+// 

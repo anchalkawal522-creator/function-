@@ -26,6 +26,7 @@
 // lexical scope
 function test(){
     let n=7777;
+    
     function inner(){
         console.log(n)
     }
