@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <title>electricity bill</title>
+    <style>
+body{
+    background:#f2f2f2;
+    font-family:Arial;
+}
+
+body {
+    background: #f2f2f2;
+    font-family: Arial;
+    max-width: 50%;
+    margin: auto;
+    text-transform: capitalize;
+    color: green;
+}
+
+input,button{
+    width:90%;
+    padding:10px;
+    margin:8px 0;
+    font-size:16px;
+        box-shadow: 0 0 9px 1px;
+}
+
+button{
+    background:blue;
+    color:white;
+    border:none;
+    cursor:pointer;
+    text-transform:capitalize;
+}
+
+button:hover{
+    background:red;
+}
+
+result{
+    font-size:18px;
+    font-weight:bold;
+    color:blue;
+}
+</style></head>
+        <body>
+            
+            <h1> electricity bill calculator</h1>
+            <input type="text" id="name" placeholder="enter your name">
+            <input type="number" id="unit" placeholder="enter units">
+            <button onclick=ask()>calculate bill</button>
+            <h1 id="result"></h1>
+            <script>
+                function ask(){
+                let name=document.getElementById("name").value;
+                let unit=Number (document.getElementById("unit").value)
+                 
+
+                let rate;
+                let total;
+                if(unit<=100){
+                    rate =5;
+                }
+                else if(unit<=200){
+                    rate = 7
+                }
+                else{
+                    rate = 10
+                };
+                total=unit*rate
+document.getElementById("result").innerText ="Name: " + name  +
+    "Unit: " + unit  +
+    "Rate: " + rate + "unit" +
+    "Total Bill:" + total;
+                }
+
+            </script>
+        </body>
+</html> 
