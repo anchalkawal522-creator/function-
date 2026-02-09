@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color Changer</title>
+</head>
+<style>
+    button{   
+      padding: 8px 15px;
+      margin-top: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #00b894;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #019875;
+    }
+    <body{
+        text-align:center;
+         margin-top:100px;
+    }
+</style>
+
+<body>
+
+<h1>Color Changer</h1>
+
+<button onclick="changeColor()">Change Color</button>
+
+<script>
+
+function changeColor(){
+
+  let colors = ["red","green","blue","orange","pink","purple"];
+
+  let random = Math.floor(Math.random() * colors.length);
+
+  document.body.style.background = colors[random];
+
+}
+
+</script>
+
+</body>
+</html>

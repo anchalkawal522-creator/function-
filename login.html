@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Login System</title>
+
+<style>
+  body {
+    font-family: Arial;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box {
+    background: white;
+    padding: 25px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px gray;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  input {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+  }
+
+  button {
+    width: 95%;
+    padding: 8px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background: #1976d2;
+  }
+
+  .msg {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2>Login System</h2>
+
+  <input type="text" id="username" placeholder="Enter Username">
+
+  <input type="password" id="password" placeholder="Enter Password">
+
+  <button onclick="login()">Login</button>
+
+  <div class="msg" id="msg"></div>
+
+</div>
+
+<script>
+
+function login() {
+  let correctUser = "ANCHAL";
+  let correctPass = "12345";
+
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("password").value;
+
+  let msg = document.getElementById("msg");
+
+  if (user === "" || pass === "") {
+
+    msg.innerText = "Fill all fields";
+    msg.style.color = "red";
+
+  }
+  else if (user === correctUser && pass === correctPass) {
+
+    msg.innerText = " Login Successful!";
+    msg.style.color = "green";
+    setTimeout(function () {
+      alert("Welcome " + user + "!");
+    }, 500);
+
+  }
+  else {
+
+    msg.innerText = " Invalid Username or Password";
+    msg.style.color = "red";
+
+  }
+}
+
+</script>
+
+</body>
+</html>

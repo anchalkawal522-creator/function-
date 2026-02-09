@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Do List</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #333;
+      padding: 25px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 80%;
+      padding: 8px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      background: #00b894;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #019875;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    li {
+      background: #444;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li.done {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .del {
+      background: red;
+      border: none;
+      color: white;
+      padding: 3px 6px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>To Do List</h1>
+
+    <input type="text" id="task" placeholder="Enter task">
+
+    <br>
+
+    <button onclick="addTask()">Add</button>
+
+    <ul id="list"></ul>
+
+  </div>
+
+
+  <script>
+
+    function addTask() {
+
+      let input = document.getElementById("task");
+      let text = input.value;
+
+      if (text === "") {
+        alert("Please enter task!");
+        return;
+      }
+
+      let li = document.createElement("li");
+      li.innerText = text;
+
+      li.onclick = function () {
+        li.classList.toggle("done");
+      }
+      let delBtn = document.createElement("button");
+      delBtn.innerText = "X";
+      delBtn.className = "del";
+
+      delBtn.onclick = function () {
+        li.remove();
+      }
+
+      li.appendChild(delBtn);
+
+      document.getElementById("list").appendChild(li);
+
+      input.value = "";
+
+    }
+
+  </script>
+
+</body>
+</html>
+
